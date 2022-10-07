@@ -10,27 +10,32 @@ body {
   color: white;
 }
 
-header > nav {
-  padding: 7px 10px 10px 50px;
+nav {
+  padding: 7px 10px 10px 10px;
   background-color: #99aab5;
 }
 
-p, h1, h3{
+p, h1, h3 {
   margin: 7px 10px 10px 10px;
 }
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-collapse: collapse;
+
+.hidden {
+  color: white;
+  text-decoration: none;
 }
 
-table {
-  border-collapse: collapse;
-  top: 3px;
-  left: 5px;
-  height: 30px;
-  width: 45px;
-  border: 1pt solid white;
+img {
+  float: left;
+  height: 400px;
+  width: 400px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+.inner {
+  text-indent: 20px;
 }
