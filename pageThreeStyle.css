@@ -4,17 +4,10 @@ html, body {
     font-family: "Times New Roman", serif;
     background: #23272a;
     margin: 0;
-}
-
-body {
     color: white;
 }
 
 nav {
     padding: 7px 10px 10px 10px;
     background-color: #99aab5;
-}
-
-p, h1 {
-    margin: 7px 10px 10px 10px;
 }
