@@ -3,7 +3,7 @@ html, body {
     width: 100%;
     font-family: "Times New Roman", serif;
     background: #23272a;
-    margin: 0;
+    margin: 5px;
 }
 
 body {
@@ -17,4 +17,16 @@ nav {
 
 p, h1 {
     margin: 7px 10px 10px 10px;
+}
+
+table, tr, td {
+    border-collapse: collapse;
+    border: 1px solid white;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+img {
+    height: 500px;
 }
