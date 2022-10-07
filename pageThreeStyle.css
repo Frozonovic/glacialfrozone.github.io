@@ -12,7 +12,7 @@ nav {
     background-color: #99aab5;
 }
 
-p, h1, table, tr, td, img {
+p, h1, table, tr, td, img, iframe {
     margin: 7px 10px 10px 10px;
 }
 
