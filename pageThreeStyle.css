@@ -11,3 +11,22 @@ nav {
     padding: 7px 10px 10px 10px;
     background-color: #99aab5;
 }
+
+p, h1, table, tr, td, img {
+    margin: 7px 10px 10px 10px;
+}
+
+table, tr, td {
+    border-collapse: collapse;
+    border: 1px solid white;
+    text-align: center;
+}
+
+img {
+    height: 500px;
+}
+
+.hidden {
+    color: white;
+    text-decoration: none;
+}

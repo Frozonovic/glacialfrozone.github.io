@@ -25,3 +25,8 @@ table, tr, td {
 img {
     height: 500px;
 }
+
+.hidden {
+    color: white;
+    text-decoration: none;
+}
