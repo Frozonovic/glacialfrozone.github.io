@@ -15,7 +15,7 @@ html {
     background-image: url("https://www.bing.com/th/id/OGC.e1a1515be986f9c222bb9da9bd1b8194?pid=1.7&rurl=http%3a%2f%2fn.sinaimg.cn%2fcollect%2fcrawl%2f20161010%2fKYxb-fxwrhpn9521624.gif&ehk=FoWxzOcFVu9bQPCu5SxULOlNy%2bBlRLs0EIwYYe4BEA4%3d");
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: lightgray;
+    background-color: transparent;
 }
 body {
     font: 75% georgia, sans-serif;
@@ -23,8 +23,7 @@ body {
     color: darkslategray;
     margin: 0;
     padding: 0;
-    backdrop-filter: blur(15px);
-    background: linear-gradient(transparent, white, transparent);
+    /*background: linear-gradient(transparent, white);*/
 }
 p {
     margin-top: 0;
@@ -57,9 +56,10 @@ abbr {
 
 /* specific divs */
 .page-wrapper {
-    padding: 0 175px 0 110px;
+    padding: 0 175px 0 5px;
     margin: 0;
     position: relative;
+
 }
 
 .intro {
@@ -70,6 +70,7 @@ abbr {
 header h1 {
     background: transparent url(http://csszengarden.com/001/h1.gif) no-repeat top left;
     margin-top: 10px;
+    margin-left: 20px;
     display: block;
     width: 219px;
     height: 87px;
@@ -80,16 +81,16 @@ header h1 {
     overflow: hidden;
 }
 header h2 {
-    background: transparent url(http://csszengarden.com/001/h2.gif) no-repeat top left;
     margin-top: 58px;
     margin-bottom: 40px;
     width: 200px;
     height: 18px;
     float: right;
 
-    text-indent: 100%;
+    text-indent: -70%;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
+    color: darkslategray;
 }
 header {
     padding-top: 20px;
@@ -125,10 +126,11 @@ footer a:link, footer a:visited {
 
 .sidebar {
     margin-left: 600px;
+    border: 1px solid lightslategray;
     position: fixed;
-    top: 0;
-    right: 0;
-    background-color: white;
+    top: 5px;
+    right: 5px;
+    background-color: ghostwhite;
 }
 .sidebar .wrapper {
     font: 10px verdana, sans-serif;
