@@ -12,5 +12,29 @@ canvas {
 }
 
 #score {
-    color: black;
+    color: white;
+}
+
+/* Added controls overlay */
+table, th, tr, td {
+    border: 1pt solid white;
+    border-collapse: collapse;
+    font-size: 2vh;
+
+}
+
+table {
+    top: 40vh;
+    left: 15vh;
+    position: absolute;
+    width: 30vh;
+    background-color: rgba(173,216,230,0.75);
+}
+
+td {
+    text-align: left;
+}
+
+th {
+    color: rebeccapurple;
 }

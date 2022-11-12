@@ -1,3 +1,4 @@
+// Framework pulled from https://www.codewithrandom.com/2022/04/13/tetris-game-code-in-javascript-tetris-game-code-html-css-javascript/
 "use strict";
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
@@ -118,7 +119,7 @@ function rotate(matrix, dir) {
         matrix.reverse();
     }
 }
-function playerDrop() {
+function playerSoftDrop() {
     player.pos.y++;
     if (collide(arena, player)) {
         player.pos.y--;
@@ -127,6 +128,18 @@ function playerDrop() {
         arenaSweep();
         updateScore();
     }
+    dropCounter = 0;
+}
+// Added function to support hard drop with up arrow
+function playerHardDrop() {
+    while (!collide(arena, player)) {
+        player.pos.y++;
+    }
+    player.pos.y--;
+    merge(arena, player);
+    playerReset();
+    arenaSweep();
+    updateScore();
     dropCounter = 0;
 }
 function playerMove(offset) {
@@ -168,7 +181,7 @@ function update(time = 0) {
     const deltaTime = time - lastTime;
     dropCounter += deltaTime;
     if (dropCounter > dropInterval) {
-        playerDrop();
+        playerSoftDrop();
     }
     lastTime = time;
     draw();
@@ -177,17 +190,31 @@ function update(time = 0) {
 function updateScore() {
     document.getElementById("score").innerText = "Score: " + player.score;
 }
+// Changed to switch statement for easier addition
 document.addEventListener("keydown", (event) => {
-    if (event.keyCode === 37) {
-        playerMove(-1);
-    } else if (event.keyCode === 39) {
-        playerMove(1);
-    } else if (event.keyCode === 40) {
-        playerDrop();
-    } else if (event.keyCode === 81) {
-        playerRotate(-1);
-    } else if (event.keyCode === 87) {
-        playerRotate(1);
+    switch (event.keyCode) {
+        case 37:
+            playerMove(-1);
+            break;
+        case 39:
+            playerMove(1);
+            break;
+        case 40:
+            playerSoftDrop();
+            break;
+        case 38:
+            playerHardDrop();
+            break;
+        case 81:
+            playerRotate(-1);
+            break;
+        case 87:
+            playerRotate(1);
+            break;
+        case 80:
+            pause
+            break;
+        default:
     }
 });
 const colors = [
@@ -206,6 +233,7 @@ const player = {
     matrix: null,
     score: 0,
 };
+
 playerReset();
 updateScore();
 update();
