@@ -24,7 +24,7 @@ table, th, tr, td {
 }
 
 table {
-    top: 40vh;
+    top: 35vh;
     left: 15vh;
     position: absolute;
     width: 30vh;
@@ -32,7 +32,7 @@ table {
 }
 
 td {
-    text-align: left;
+    text-align: center;
 }
 
 th {

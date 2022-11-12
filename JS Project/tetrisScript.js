@@ -180,7 +180,8 @@ let lastTime = 0;
 function update(time = 0) {
     const deltaTime = time - lastTime;
     dropCounter += deltaTime;
-    if (dropCounter > dropInterval) {
+    // If !paused is true, the game will play, else the game will be paused
+    if (dropCounter > dropInterval && !paused) {
         playerSoftDrop();
     }
     lastTime = time;
@@ -190,29 +191,42 @@ function update(time = 0) {
 function updateScore() {
     document.getElementById("score").innerText = "Score: " + player.score;
 }
+let paused = false;
 // Changed to switch statement for easier addition
+// Changed for keyCode (deprecated) to code for easier understanding
 document.addEventListener("keydown", (event) => {
-    switch (event.keyCode) {
-        case 37:
+    switch (event.code) {
+        case "ArrowLeft":
             playerMove(-1);
             break;
-        case 39:
+        case "ArrowRight":
             playerMove(1);
             break;
-        case 40:
+        case "ArrowDown":
             playerSoftDrop();
             break;
-        case 38:
+        case "Space":
             playerHardDrop();
             break;
-        case 81:
+        case "KeyZ":
             playerRotate(-1);
             break;
-        case 87:
+        case "KeyX":
             playerRotate(1);
             break;
-        case 80:
-            pause
+        // Added "P" to pause game
+        case "KeyP":
+            paused = !paused;
+            break;
+        // Added "R" to restart game and reset score
+        case "KeyR":
+            player.score = 0;
+            arena.forEach(row => row.fill(0));
+
+            createPiece();
+            updateScore();
+            playerReset();
+
             break;
         default:
     }
