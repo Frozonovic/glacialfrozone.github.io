@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Generator</title>
+    <link href="finalProject.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <p id="imageLabel">Random Image Selector</p>
+    <table>
+        <tr>
+            <td>
+                <span id="tableHeader">PARAMETERS</span>
+                <ul>
+                    <li>
+                        Size: Limit selection to dimensions matching a single specification
+                    </li>
+                    <li>
+                        Collections: Public collection ID to filter selection. If multiple, comma-separated
+                    </li>
+                    <li>
+                        Topics: Public topic ID to filter selection. If multiple, comma-separated
+                    </li>
+                    <li>
+                        Username: Limit selection to a single user
+                    </li>
+                    <li>
+                        Query: Limit selection to photos matching a search term or phrase
+                    </li>
+                    <li>
+                        Orientation: Filter by orientation
+                    </li>
+                </ul>
+                Note: You can't use the collections or topics filtering with query parameters in the same request
+            </td>
+        </tr>
+    </table>
+    <input type="checkbox" id="Size">
+    <label for="Size">Size  (i.e. 200x400)</label><input type="tel" id="sizeInput" class="inputs">
+    <br>
+    <input type="checkbox" id="Collections">
+    <label for="Collections">Collections</label><input type="text" id="collInput" class="inputs">
+    <br>
+    <input type="checkbox" id="Topics">
+    <label for="Topics">Topics</label><input type="text" id="topInput" class="inputs">
+    <br>
+    <input type="checkbox" id="Username">
+    <label for="Username">Username</label><input type="text" id="userInput" class="inputs">
+    <br>
+    <input type="checkbox" id="Query">
+    <label for="Query">Query</label><input type="text" id="queryInput" class="inputs">
+    <br>
+    <label for="Orientation">Orientation: </label>
+    <select name="Orientation" id="Orientation">
+        <option value="portrait">Portrait</option>
+        <option value="landscape">Landscape</option>
+        <option value="squarish">Squarish</option>
+    </select>
+   <br>
+    <button type="button" id="getImage">Generate</button>
+    <div id="displayImage">
+
+    </div>
+    <script src="finalProject.js"></script>
+</body>
+</html>
